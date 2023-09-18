@@ -1,11 +1,10 @@
 package be.stadr.vikinglanguagecore;
 
-import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication(scanBasePackages = {"be.stadr.vikinglanguagecore.rest_api"})
+@SpringBootApplication(scanBasePackages = {"be.stadr.vikinglanguagecore.rest_api", "be.stadr.vikinglanguagecore.service",
+		"be.stadr.vikinglanguagecore.persist"})
 public class VikingLanguageCoreApplication {
 
 	public static void main(String[] args) {
