@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.10.xsd">
+
+    <changeSet id="1" author="Gino Dockx">
+        <createTable tableName="word">
+            <column name="id" type="integer">
+                <constraints primaryKey="true" primaryKeyName="pk_word_id"/>
+            </column>
+            <column name="latin_notation" type="nvarchar2">
+                <constraints nullable="false" notNullConstraintName="nn_word_latin_notation"/>
+            </column>
+            <column name="most_frequent_in_sagas" type="bool">
+                <constraints nullable="false" notNullConstraintName="nn_word_most_frequent_in_sagas"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
