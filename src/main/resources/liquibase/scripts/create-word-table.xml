@@ -19,6 +19,7 @@
             <column name="most_frequent_in_sagas" type="bool">
                 <constraints nullable="false" notNullConstraintName="nn_word_most_frequent_in_sagas"/>
             </column>
+            <column name="gender" type="integer"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

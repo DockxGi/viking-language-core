@@ -19,6 +19,8 @@ public class NounJsonRequest implements WordRequest {
     @NotNull
     private Boolean mostFrequentInSagas;
 
+    private String gender;
+
     @Override
     public boolean isMostFrequentInSagas() {
         return mostFrequentInSagas;
