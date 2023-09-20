@@ -30,6 +30,11 @@ public class WordService {
         repository.save(word);
     }
 
+    @Transactional
+    public Iterable<Word> getAll() {
+        return repository.findAll();
+    }
+
     public void createVerb(VerbJsonRequest request) {
         String latinNotation = request.getLatinNotation();
         boolean mostFrequentInSagas = request.isMostFrequentInSagas();
@@ -37,4 +42,6 @@ public class WordService {
         Word word = new Verb(latinNotation, mostFrequentInSagas);
         repository.save(word);
     }
+
+
 }

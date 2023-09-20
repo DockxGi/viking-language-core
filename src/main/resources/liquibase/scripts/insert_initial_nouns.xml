@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.10.xsd">
+
+    <changeSet id="2" author="Gino Dockx">
+        <insert tableName="word">
+            <column name="id" value="-1" />
+            <column name="latin_notation" value="ma∂r"/>
+            <column name="type" value="1"/>
+            <column name="gender" value="0"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+        </insert>
+        <insert tableName="word">
+            <column name="id" value="-2" />
+            <column name="latin_notation" value="konungr"/>
+            <column name="type" value="1"/>
+            <column name="gender" value="0"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+        </insert>
+        <insert tableName="word">
+            <column name="id" value="-3" />
+            <column name="latin_notation" value="skip"/>
+            <column name="type" value="1"/>
+            <column name="gender" value="2"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

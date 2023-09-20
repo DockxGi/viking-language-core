@@ -1,13 +1,19 @@
 package be.stadr.vikinglanguagecore.rest_api.word;
 
+import be.stadr.vikinglanguagecore.domain.Word;
 import be.stadr.vikinglanguagecore.rest_api.word.json.NounJsonRequest;
+import be.stadr.vikinglanguagecore.rest_api.word.json.WordJsonResponse;
 import be.stadr.vikinglanguagecore.rest_api.word.json.VerbJsonRequest;
 import be.stadr.vikinglanguagecore.service.WordService;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.OK;
 
 @RestController
 @RequestMapping("word")
@@ -28,5 +34,22 @@ public class WordController {
         wordService.createVerb(request);
     }
 
+    @ResponseStatus(OK)
+    @GetMapping()
+    public List<WordJsonResponse> getAllWords(){
+        Iterable<Word> allWords = wordService.getAll();
+        return wordsToWordJsonResponse(allWords);
+    }
+
+    private List<WordJsonResponse> wordsToWordJsonResponse(Iterable<Word> allWords) {
+        List<WordJsonResponse> response = new ArrayList<>();
+        allWords.forEach(word -> {
+            Integer id = word.getId();
+            String latinNotation = word.getLatinNotation();
+            WordJsonResponse wordJsonResponse = new WordJsonResponse(id, latinNotation);
+            response.add(wordJsonResponse);
+        });
+        return response;
+    }
 
 }
