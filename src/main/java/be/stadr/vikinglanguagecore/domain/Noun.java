@@ -19,8 +19,11 @@ public class Noun extends Word {
     @Setter
     private Gender gender;
 
-    public Noun(String latinNotation, boolean mostFrequentInSagas, Gender gender) {
+    private Boolean strong;
+
+    public Noun(String latinNotation, boolean mostFrequentInSagas, Gender gender, Boolean strong) {
         super(latinNotation, mostFrequentInSagas);
         this.gender = gender;
+        this.strong = strong;
     }
 }

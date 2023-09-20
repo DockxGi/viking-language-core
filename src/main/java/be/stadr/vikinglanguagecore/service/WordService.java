@@ -25,7 +25,8 @@ public class WordService {
         boolean mostFrequentInSagas = request.isMostFrequentInSagas();
 
         Gender gender = EnumUtils.getEnumIgnoreCase(Gender.class, request.getGender());
-        Word word = new Noun(latinNotation, mostFrequentInSagas, gender);
+        Boolean strong = request.getStrong();
+        Word word = new Noun(latinNotation, mostFrequentInSagas, gender, strong);
         repository.save(word);
     }
 
