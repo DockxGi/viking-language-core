@@ -35,5 +35,6 @@
                                  constraintName="fk_translation"
                                  referencedTableName="translation"
                                  referencedColumnNames="id"/>
+        <addUniqueConstraint tableName="translation" columnNames="language_code,text"/>
     </changeSet>
 </databaseChangeLog>
