@@ -1,9 +1,12 @@
 package be.stadr.vikinglanguagecore.rest_api.word;
 
+import be.stadr.vikinglanguagecore.domain.Translation;
 import be.stadr.vikinglanguagecore.domain.Word;
+import be.stadr.vikinglanguagecore.rest_api.translation.json.TranslationJsonResponse;
 import be.stadr.vikinglanguagecore.rest_api.word.json.NounJsonRequest;
-import be.stadr.vikinglanguagecore.rest_api.word.json.WordJsonResponse;
 import be.stadr.vikinglanguagecore.rest_api.word.json.VerbJsonRequest;
+import be.stadr.vikinglanguagecore.rest_api.word.json.WordJsonResponse;
+import be.stadr.vikinglanguagecore.service.TranslationService;
 import be.stadr.vikinglanguagecore.service.WordService;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
@@ -21,6 +24,7 @@ import static org.springframework.http.HttpStatus.OK;
 public class WordController {
 
     private final WordService wordService;
+    private final TranslationService translationService;
 
     @ResponseStatus(CREATED)
     @PostMapping(value = "noun")
@@ -39,6 +43,16 @@ public class WordController {
     public List<WordJsonResponse> getAllWords(){
         Iterable<Word> allWords = wordService.getAll();
         return wordsToWordJsonResponse(allWords);
+    }
+
+    @ResponseStatus(OK)
+    @GetMapping(value = "/{id}/translation")
+    public List<TranslationJsonResponse> getTranslations(@PathVariable("id") int wordId){
+        List<Translation> translation = translationService.findByWord(wordId);
+
+        return translation.stream()
+                .map(t -> new TranslationJsonResponse(t.getId(), t.getLanguageCode(), t.getText()))
+                .toList();
     }
 
     private List<WordJsonResponse> wordsToWordJsonResponse(Iterable<Word> allWords) {

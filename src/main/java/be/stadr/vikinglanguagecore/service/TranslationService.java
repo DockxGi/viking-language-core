@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -34,4 +35,8 @@ public class TranslationService {
         translationRepository.save(translation);
     }
 
+    @Transactional
+    public List<Translation> findByWord(int wordId) {
+        return translationRepository.findByWordId(wordId);
+    }
 }
