@@ -1,10 +1,13 @@
 package be.stadr.vikinglanguagecore.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.util.CollectionUtils;
 
 import javax.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static javax.persistence.GenerationType.AUTO;
@@ -16,6 +19,7 @@ import static javax.persistence.GenerationType.AUTO;
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 public class Translation {
 
     @Id
@@ -25,6 +29,11 @@ public class Translation {
     private String languageCode;
     private String text;
 
+    public Translation(String languageCode, String text) {
+        this.languageCode = languageCode;
+        this.text = text;
+    }
+
     @ManyToMany
     @JoinTable(
             name = "word_translation",
@@ -32,4 +41,14 @@ public class Translation {
             inverseJoinColumns = {@JoinColumn(name = "word_id")}
     )
     private List<Word> words;
+
+    public boolean addWord(Word word){
+        if (CollectionUtils.isEmpty(words)){
+            words = new ArrayList<>();
+        }
+        if (words.contains(word)){
+            return false;
+        }
+        return words.add(word);
+    }
 }
