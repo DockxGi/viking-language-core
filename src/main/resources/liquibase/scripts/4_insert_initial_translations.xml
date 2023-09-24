@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.10.xsd">
+
+    <changeSet id="5" author="Gino Dockx">
+
+        <!-- man, person -->
+        <insert tableName="translation">
+            <column name="id" value="-1"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="man"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-2"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="person"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-1"/>
+            <column name="translation_id" value="-1"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-1"/>
+            <column name="translation_id" value="-2"/>
+        </insert>
+
+        <!-- king -->
+        <insert tableName="translation">
+            <column name="id" value="-3"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="king"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-2"/>
+            <column name="translation_id" value="-3"/>
+        </insert>
+
+        <!-- ship -->
+        <insert tableName="translation">
+            <column name="id" value="-4"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="ship"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-3"/>
+            <column name="translation_id" value="-4"/>
+        </insert>
+    </changeSet>
+
+
+</databaseChangeLog>
