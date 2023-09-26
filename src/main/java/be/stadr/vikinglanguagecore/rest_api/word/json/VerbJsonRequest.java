@@ -4,9 +4,7 @@ import be.stadr.vikinglanguagecore.service.WordRequest;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Getter
 @Setter
@@ -17,6 +15,12 @@ public class VerbJsonRequest implements WordRequest {
 
     @NotNull
     private Boolean mostFrequentInSagas;
+
+    private Boolean strong;
+
+    @Min(value = 1, message = "conjugation should be 1,2,3 or 4")
+    @Max(value = 4, message = "conjugation should be 1,2,3 or 4")
+    private Integer conjugation;
 
     @Override
     public boolean isMostFrequentInSagas() {

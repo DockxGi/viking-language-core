@@ -9,7 +9,13 @@ import javax.persistence.Entity;
 @DiscriminatorValue(value = "2")
 @NoArgsConstructor
 public class Verb extends Word {
-    public Verb(String latinNotation, boolean mostFrequentInSagas) {
+
+    private Boolean strong;
+    private Integer conjugation;
+
+    public Verb(String latinNotation, boolean mostFrequentInSagas, Boolean strong, Integer conjugation) {
         super(latinNotation, mostFrequentInSagas);
+        this.strong = strong;
+        this.conjugation = conjugation;
     }
 }

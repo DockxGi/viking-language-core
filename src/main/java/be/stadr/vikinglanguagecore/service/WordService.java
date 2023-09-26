@@ -38,8 +38,10 @@ public class WordService {
     public void createVerb(VerbJsonRequest request) {
         String latinNotation = request.getLatinNotation();
         boolean mostFrequentInSagas = request.isMostFrequentInSagas();
+        Boolean strong = request.getStrong();
+        Integer conjugation = request.getConjugation();
 
-        Word word = new Verb(latinNotation, mostFrequentInSagas);
+        Word word = new Verb(latinNotation, mostFrequentInSagas, strong, conjugation);
         repository.save(word);
     }
 
