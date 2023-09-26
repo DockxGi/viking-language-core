@@ -39,6 +39,12 @@ public class WordController {
     }
 
     @ResponseStatus(OK)
+    @GetMapping(value = "verb/{id}/conjugation")
+    public void conjugateVerb(@PathVariable int id){
+        wordService.conjugateVerb(id);
+    }
+
+    @ResponseStatus(OK)
     @GetMapping()
     public List<WordJsonResponse> getAllWords(){
         Iterable<Word> allWords = wordService.getAll();

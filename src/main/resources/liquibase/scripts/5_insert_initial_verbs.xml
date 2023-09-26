@@ -11,30 +11,39 @@
             <column name="latin_notation" value="kalla"/>
             <column name="type" value="2"/>
             <column name="most_frequent_in_sagas" value="true"/>
+            <column name="strong" value="false"/>
+            <column name="conjugation" value="1"/>
         </insert>
         <insert tableName="word">
             <column name="id" value="-5" />
             <column name="latin_notation" value="mæla"/>
             <column name="type" value="2"/>
             <column name="most_frequent_in_sagas" value="true"/>
+            <column name="strong" value="false"/>
+            <column name="conjugation" value="2"/>
         </insert>
         <insert tableName="word">
             <column name="id" value="-6" />
             <column name="latin_notation" value="spyrja"/>
             <column name="type" value="2"/>
             <column name="most_frequent_in_sagas" value="true"/>
+            <column name="strong" value="false"/>
+            <column name="conjugation" value="3"/>
         </insert>
         <insert tableName="word">
             <column name="id" value="-7" />
             <column name="latin_notation" value="þola"/>
             <column name="type" value="2"/>
             <column name="most_frequent_in_sagas" value="true"/>
+            <column name="strong" value="false"/>
+            <column name="conjugation" value="4"/>
         </insert>
         <insert tableName="word">
             <column name="id" value="-8" />
             <column name="latin_notation" value="vera"/>
             <column name="type" value="2"/>
             <column name="most_frequent_in_sagas" value="true"/>
+            <column name="strong" value="true"/>
         </insert>
     </changeSet>
 

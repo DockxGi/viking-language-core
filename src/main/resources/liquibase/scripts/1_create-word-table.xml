@@ -21,6 +21,7 @@
             </column>
             <column name="strong" type="bool"/>
             <column name="gender" type="integer"/>
+            <column name="conjugation" type="integer"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

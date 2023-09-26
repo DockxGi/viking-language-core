@@ -1,17 +1,17 @@
 package be.stadr.vikinglanguagecore.service;
 
-import be.stadr.vikinglanguagecore.domain.Gender;
-import be.stadr.vikinglanguagecore.domain.Noun;
-import be.stadr.vikinglanguagecore.domain.Verb;
-import be.stadr.vikinglanguagecore.domain.Word;
+import be.stadr.vikinglanguagecore.domain.*;
 import be.stadr.vikinglanguagecore.persist.WordRepository;
 import be.stadr.vikinglanguagecore.rest_api.word.json.NounJsonRequest;
 import be.stadr.vikinglanguagecore.rest_api.word.json.VerbJsonRequest;
+import be.stadr.vikinglanguagecore.service.exception.WordNotFound;
 import lombok.AllArgsConstructor;
 import org.apache.commons.lang3.EnumUtils;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+
+import static be.stadr.vikinglanguagecore.domain.WordType.VERB;
 
 @Service
 @AllArgsConstructor
@@ -45,5 +45,13 @@ public class WordService {
         repository.save(word);
     }
 
+    public void conjugateVerb(int verbId) {
+        Verb verb = repository.findByIdAndType(verbId, VERB.getNumber());
 
+        if (verb == null){
+            throw new WordNotFound(verbId, VERB);
+        }
+
+
+    }
 }
