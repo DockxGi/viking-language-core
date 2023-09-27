@@ -1,5 +1,6 @@
 package be.stadr.vikinglanguagecore.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +9,10 @@ import lombok.Setter;
  */
 @Setter
 @Getter
+@AllArgsConstructor
 public class ConjugationResult {
+    int person;
+    Number number;
     String subject;
     String verb;
 }

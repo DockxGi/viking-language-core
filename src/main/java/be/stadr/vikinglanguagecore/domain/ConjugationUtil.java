@@ -24,13 +24,47 @@ public class ConjugationUtil {
         String plSem = determineStem(latinNotation, conjugation, PL);
 
         List<ConjugationResult> results = new ArrayList<>(6);
+        addConjugationResults(sgStem, results, SG);
+        addConjugationResults(plSem, results, PL);
+
+        return results;
+    }
+
+    private static void addConjugationResults(String sgStem, List<ConjugationResult> results, Number sg) {
         for (int person = 1; person < 4; person++) {
-            ConjugationResult cr = new ConjugationResult();
-            cr.setSubject(determineSubject(person, SG));
-            //todo
+            String subject = determineSubject(person, sg);
+            String ending = determineEnding(person, sg);
+
+            ConjugationResult result = new ConjugationResult(person, sg, subject, concatStemWithEnding(sgStem, ending));
+            results.add(result);
+        }
+    }
+
+    public static String concatStemWithEnding(String stem, String ending) {
+        String adaptedStem = stem;
+
+        if (stem.endsWith("j") && !(ending.startsWith("a") || ending.startsWith("u"))){
+            adaptedStem = stem.substring(0, stem.length() - 1);
         }
 
-        return null;
+        return adaptedStem + ending;
+    }
+
+    public static String determineEnding(int person, Number num) {
+        if (num.equals(SG)){
+            if (person == 1){
+                return "";
+            } else {
+                return "r";
+            }
+        }
+        if (person == 1){
+            return "um";
+        } else if (person == 2){
+            return "i∂";
+        } else {
+            return "a";
+        }
     }
 
     public static String determineStem(String latinNotation, int conjugation, Number num) {
