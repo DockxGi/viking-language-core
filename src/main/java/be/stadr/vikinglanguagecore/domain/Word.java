@@ -30,8 +30,6 @@ public abstract class Word {
     @GeneratedValue(strategy= AUTO)
     private Integer id;
 
-
-
     private String latinNotation;
     private boolean mostFrequentInSagas;
 

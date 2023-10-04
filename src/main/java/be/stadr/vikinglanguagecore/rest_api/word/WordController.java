@@ -1,8 +1,11 @@
 package be.stadr.vikinglanguagecore.rest_api.word;
 
+import be.stadr.vikinglanguagecore.domain.ConjugationResult;
+import be.stadr.vikinglanguagecore.domain.Number;
 import be.stadr.vikinglanguagecore.domain.Translation;
 import be.stadr.vikinglanguagecore.domain.Word;
 import be.stadr.vikinglanguagecore.rest_api.translation.json.TranslationJsonResponse;
+import be.stadr.vikinglanguagecore.rest_api.word.json.ConjugationResultJsonResponse;
 import be.stadr.vikinglanguagecore.rest_api.word.json.NounJsonRequest;
 import be.stadr.vikinglanguagecore.rest_api.word.json.VerbJsonRequest;
 import be.stadr.vikinglanguagecore.rest_api.word.json.WordJsonResponse;
@@ -40,8 +43,25 @@ public class WordController {
 
     @ResponseStatus(OK)
     @GetMapping(value = "verb/{id}/conjugation")
-    public void conjugateVerb(@PathVariable int id){
-        wordService.conjugateVerb(id);
+    public ArrayList<ConjugationResultJsonResponse> conjugateVerb(@PathVariable int id){
+        List<ConjugationResult> results = wordService.conjugateVerb(id);
+
+        return conjugationResultsToJsonResponse(results);
+
+    }
+
+    private ArrayList<ConjugationResultJsonResponse> conjugationResultsToJsonResponse(List<ConjugationResult> results) {
+        ArrayList<ConjugationResultJsonResponse> response = new ArrayList<>();
+        results.forEach(result -> {
+            int person = result.getPerson();
+            Number number = result.getNumber();
+            String subject = result.getSubject();
+            String verb = result.getVerb();
+
+            ConjugationResultJsonResponse cjr = new ConjugationResultJsonResponse(person, number, subject, verb);
+            response.add(cjr);
+        });
+        return response;
     }
 
     @ResponseStatus(OK)

@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
+import java.util.List;
+
 import static be.stadr.vikinglanguagecore.domain.WordType.VERB;
 
 @Service
@@ -45,13 +47,13 @@ public class WordService {
         repository.save(word);
     }
 
-    public void conjugateVerb(int verbId) {
+    public List<ConjugationResult> conjugateVerb(int verbId) {
         Verb verb = repository.findByIdAndType(verbId, VERB.getNumber());
 
         if (verb == null){
             throw new WordNotFound(verbId, VERB);
         }
 
-
+        return ConjugationUtil.conjugateVerb(verb);
     }
 }
