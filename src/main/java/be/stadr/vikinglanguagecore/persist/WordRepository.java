@@ -10,4 +10,5 @@ public interface WordRepository extends CrudRepository<Word, Integer> {
     @Query(nativeQuery = true, value = "SELECT * FROM word WHERE id = :id AND type = :type")
     Verb findByIdAndType(int id, int type);
 
+    Iterable<Word> findAllByMostFrequentInSagas(boolean mostFrequentInSagas);
 }

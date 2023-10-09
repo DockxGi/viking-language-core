@@ -5,10 +5,7 @@ import be.stadr.vikinglanguagecore.domain.Number;
 import be.stadr.vikinglanguagecore.domain.Translation;
 import be.stadr.vikinglanguagecore.domain.Word;
 import be.stadr.vikinglanguagecore.rest_api.translation.json.TranslationJsonResponse;
-import be.stadr.vikinglanguagecore.rest_api.word.json.ConjugationResultJsonResponse;
-import be.stadr.vikinglanguagecore.rest_api.word.json.NounJsonRequest;
-import be.stadr.vikinglanguagecore.rest_api.word.json.VerbJsonRequest;
-import be.stadr.vikinglanguagecore.rest_api.word.json.WordJsonResponse;
+import be.stadr.vikinglanguagecore.rest_api.word.json.*;
 import be.stadr.vikinglanguagecore.service.TranslationService;
 import be.stadr.vikinglanguagecore.service.WordService;
 import lombok.AllArgsConstructor;
@@ -68,6 +65,17 @@ public class WordController {
     @GetMapping()
     public List<WordJsonResponse> getAllWords(){
         Iterable<Word> allWords = wordService.getAll();
+        return wordsToWordJsonResponse(allWords);
+    }
+
+    @ResponseStatus(OK)
+    @GetMapping(value = "random/set")
+    public List<WordJsonResponse> getRandomWords(@RequestBody @Validated RandomWordsJsonRequest request){
+        int amount = request.getAmount();
+        Boolean mostFrequentInSagas = request.getMostFrequentInSagas();
+
+        Iterable<Word> allWords = wordService.getRandomSet(amount, mostFrequentInSagas);
+
         return wordsToWordJsonResponse(allWords);
     }
 

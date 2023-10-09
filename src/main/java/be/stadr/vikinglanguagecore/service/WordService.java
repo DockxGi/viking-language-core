@@ -58,4 +58,15 @@ public class WordService {
 
         return ConjugationUtil.conjugateVerb(verb);
     }
+
+    public Iterable<Word> getRandomSet(int amount, Boolean mostFrequentInSagas) {
+        Iterable<Word> wordsToPickFrom = null;
+        if (mostFrequentInSagas == null){
+            wordsToPickFrom = repository.findAll();
+        } else {
+            wordsToPickFrom = repository.findAllByMostFrequentInSagas(mostFrequentInSagas);
+        }
+
+        return RandomWordsPicker.pickRandomFrom(wordsToPickFrom, amount);
+    }
 }
