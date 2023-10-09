@@ -1,5 +1,8 @@
-package be.stadr.vikinglanguagecore.domain;
+package be.stadr.vikinglanguagecore.domain.declension;
 
+import be.stadr.vikinglanguagecore.domain.Case;
+import be.stadr.vikinglanguagecore.domain.Gender;
+import be.stadr.vikinglanguagecore.domain.Noun;
 import be.stadr.vikinglanguagecore.domain.exception.DeclensionNotPossible;
 
 import java.util.ArrayList;

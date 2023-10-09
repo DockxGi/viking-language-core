@@ -1,5 +1,7 @@
 package be.stadr.vikinglanguagecore.domain;
 
+import be.stadr.vikinglanguagecore.domain.declension.DeclensionResult;
+import be.stadr.vikinglanguagecore.domain.declension.DeclensionUtil;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

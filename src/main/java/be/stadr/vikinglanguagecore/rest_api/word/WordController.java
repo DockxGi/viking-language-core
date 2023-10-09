@@ -1,6 +1,6 @@
 package be.stadr.vikinglanguagecore.rest_api.word;
 
-import be.stadr.vikinglanguagecore.domain.ConjugationResult;
+import be.stadr.vikinglanguagecore.domain.conjugation.ConjugationResult;
 import be.stadr.vikinglanguagecore.domain.Number;
 import be.stadr.vikinglanguagecore.domain.Translation;
 import be.stadr.vikinglanguagecore.domain.Word;

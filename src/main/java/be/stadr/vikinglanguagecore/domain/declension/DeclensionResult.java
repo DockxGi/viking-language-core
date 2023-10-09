@@ -1,5 +1,7 @@
-package be.stadr.vikinglanguagecore.domain;
+package be.stadr.vikinglanguagecore.domain.declension;
 
+import be.stadr.vikinglanguagecore.domain.Case;
+import be.stadr.vikinglanguagecore.domain.Number;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

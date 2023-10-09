@@ -1,5 +1,7 @@
 package be.stadr.vikinglanguagecore.domain;
 
+import be.stadr.vikinglanguagecore.domain.conjugation.ConjugationResult;
+import be.stadr.vikinglanguagecore.domain.conjugation.ConjugationUtil;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

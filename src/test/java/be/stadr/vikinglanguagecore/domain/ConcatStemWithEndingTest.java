@@ -1,5 +1,6 @@
 package be.stadr.vikinglanguagecore.domain;
 
+import be.stadr.vikinglanguagecore.domain.conjugation.ConjugationUtil;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

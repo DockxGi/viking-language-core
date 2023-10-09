@@ -1,6 +1,8 @@
 package be.stadr.vikinglanguagecore.service;
 
 import be.stadr.vikinglanguagecore.domain.*;
+import be.stadr.vikinglanguagecore.domain.conjugation.ConjugationResult;
+import be.stadr.vikinglanguagecore.domain.conjugation.ConjugationUtil;
 import be.stadr.vikinglanguagecore.persist.WordRepository;
 import be.stadr.vikinglanguagecore.rest_api.word.json.NounJsonRequest;
 import be.stadr.vikinglanguagecore.rest_api.word.json.VerbJsonRequest;

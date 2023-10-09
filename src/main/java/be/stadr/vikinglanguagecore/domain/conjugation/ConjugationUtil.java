@@ -1,6 +1,8 @@
-package be.stadr.vikinglanguagecore.domain;
+package be.stadr.vikinglanguagecore.domain.conjugation;
 
 
+import be.stadr.vikinglanguagecore.domain.Number;
+import be.stadr.vikinglanguagecore.domain.Verb;
 import be.stadr.vikinglanguagecore.domain.exception.ConjugationNotPossible;
 
 import java.util.ArrayList;

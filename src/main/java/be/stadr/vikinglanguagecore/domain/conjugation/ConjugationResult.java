@@ -1,5 +1,6 @@
-package be.stadr.vikinglanguagecore.domain;
+package be.stadr.vikinglanguagecore.domain.conjugation;
 
+import be.stadr.vikinglanguagecore.domain.Number;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
