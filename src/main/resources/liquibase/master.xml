@@ -8,5 +8,12 @@
 		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
 		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.9.xsd">
 
-    <includeAll path="liquibase/scripts"/>
+    <include file="./scripts/1_create-word-table.xml" relativeToChangelogFile="true"/>
+    <include file="./scripts/2_insert_initial_nouns.xml" relativeToChangelogFile="true"/>
+    <include file="./scripts/3_insert_initial_adjectives.xml" relativeToChangelogFile="true"/>
+    <include file="./scripts/4_insert_initial_verbs.xml" relativeToChangelogFile="true"/>
+    <include file="./scripts/9_create_translation_table.xml" relativeToChangelogFile="true"/>
+    <include file="./scripts/10_insert_initial_nouns_translations.xml" relativeToChangelogFile="true"/>
+    <include file="./scripts/11_insert_initial_adjectives_translations.xml" relativeToChangelogFile="true"/>
+
 </databaseChangeLog>

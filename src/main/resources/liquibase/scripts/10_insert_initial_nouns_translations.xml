@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.10.xsd">
 
-    <changeSet id="5" author="Gino Dockx">
+    <changeSet id="10" author="Gino Dockx">
 
         <!-- man, person -->
         <insert tableName="translation">

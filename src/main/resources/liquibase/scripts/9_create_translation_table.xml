@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.10.xsd">
 
-    <changeSet id="3" author="Gino Dockx">
+    <changeSet id="9.1" author="Gino Dockx">
         <createTable tableName="translation">
             <column name="id" type="integer">
                 <constraints primaryKey="true" primaryKeyName="pk_translation_id"/>
@@ -19,7 +19,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="4" author="Gino Dockx">
+    <changeSet id="9.2" author="Gino Dockx">
         <createTable tableName="word_translation">
             <column name="word_id" type="integer">
                 <constraints nullable="false"/>

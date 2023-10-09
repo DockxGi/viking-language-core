@@ -7,24 +7,21 @@
 
     <changeSet id="3" author="Gino Dockx">
         <insert tableName="word">
-            <column name="id" value="-1" />
-            <column name="latin_notation" value="ma∂r"/>
-            <column name="type" value="1"/>
-            <column name="gender" value="0"/>
+            <column name="id" value="-9" />
+            <column name="latin_notation" value="mikill"/>
+            <column name="type" value="3"/>
             <column name="most_frequent_in_sagas" value="true"/>
         </insert>
         <insert tableName="word">
-            <column name="id" value="-2" />
-            <column name="latin_notation" value="konungr"/>
-            <column name="type" value="1"/>
-            <column name="gender" value="0"/>
+            <column name="id" value="-10" />
+            <column name="latin_notation" value="margr"/>
+            <column name="type" value="3"/>
             <column name="most_frequent_in_sagas" value="true"/>
         </insert>
         <insert tableName="word">
-            <column name="id" value="-3" />
-            <column name="latin_notation" value="skip"/>
-            <column name="type" value="1"/>
-            <column name="gender" value="2"/>
+            <column name="id" value="-11" />
+            <column name="latin_notation" value="gó∂r"/>
+            <column name="type" value="3"/>
             <column name="most_frequent_in_sagas" value="true"/>
         </insert>
     </changeSet>

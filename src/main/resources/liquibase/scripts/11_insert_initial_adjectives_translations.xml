@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.10.xsd">
+
+    <changeSet id="11" author="Gino Dockx">
+
+        <!-- great -->
+        <insert tableName="translation">
+            <column name="id" value="-5"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="great"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-9"/>
+            <column name="translation_id" value="-5"/>
+        </insert>
+
+        <!-- many -->
+        <insert tableName="translation">
+            <column name="id" value="-6"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="many"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-10"/>
+            <column name="translation_id" value="-6"/>
+        </insert>
+
+        <!-- good -->
+        <insert tableName="translation">
+            <column name="id" value="-7"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="good"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-11"/>
+            <column name="translation_id" value="-7"/>
+        </insert>
+    </changeSet>
+
+
+</databaseChangeLog>
