@@ -69,7 +69,7 @@ public class WordController {
     }
 
     @ResponseStatus(OK)
-    @GetMapping(value = "random/set")
+    @PostMapping(value = "random/set")
     public List<WordJsonResponse> getRandomWords(@RequestBody @Validated RandomWordsJsonRequest request){
         int amount = request.getAmount();
         Boolean mostFrequentInSagas = request.getMostFrequentInSagas();
