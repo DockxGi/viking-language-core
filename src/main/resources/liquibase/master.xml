@@ -14,6 +14,7 @@
     <include file="./scripts/4_insert_initial_verbs.xml" relativeToChangelogFile="true"/>
     <include file="./scripts/9_create_translation_table.xml" relativeToChangelogFile="true"/>
     <include file="./scripts/10_insert_initial_nouns_translations.xml" relativeToChangelogFile="true"/>
-    <include file="./scripts/11_insert_initial_adjectives_translations.xml" relativeToChangelogFile="true"/>
+    <include file="./scripts/10_insert_initial_nouns_translations.xml" relativeToChangelogFile="true"/>
+    <include file="./scripts/12_insert_initial_verbs_translations.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
