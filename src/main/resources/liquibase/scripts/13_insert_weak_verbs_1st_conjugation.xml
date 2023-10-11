@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.10.xsd">
+
+    <changeSet id="13" author="Gino Dockx">
+        <!-- leita, search -->
+        <insert tableName="word">
+            <column name="id" value="-12" />
+            <column name="latin_notation" value="leita"/>
+            <column name="type" value="2"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+            <column name="strong" value="false"/>
+            <column name="conjugation" value="1"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-18"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="search"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-12"/>
+            <column name="translation_id" value="-18"/>
+        </insert>
+
+        <!-- svara, answer -->
+        <insert tableName="word">
+            <column name="id" value="-13" />
+            <column name="latin_notation" value="svara"/>
+            <column name="type" value="2"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+            <column name="strong" value="false"/>
+            <column name="conjugation" value="1"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-19"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="answer"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-13"/>
+            <column name="translation_id" value="-19"/>
+        </insert>
+
+        <!-- tala, talk -->
+        <insert tableName="word">
+            <column name="id" value="-14" />
+            <column name="latin_notation" value="tala"/>
+            <column name="type" value="2"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+            <column name="strong" value="false"/>
+            <column name="conjugation" value="1"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-20"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="talk"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-14"/>
+            <column name="translation_id" value="-20"/>
+        </insert>
+
+        <!-- ætla, intend -->
+        <insert tableName="word">
+            <column name="id" value="-15" />
+            <column name="latin_notation" value="ætla"/>
+            <column name="type" value="2"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+            <column name="strong" value="false"/>
+            <column name="conjugation" value="1"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-21"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="intend"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-15"/>
+            <column name="translation_id" value="-21"/>
+        </insert>
+    </changeSet>
+
+
+</databaseChangeLog>

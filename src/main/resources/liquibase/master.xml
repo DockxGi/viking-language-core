@@ -16,5 +16,6 @@
     <include file="./scripts/10_insert_initial_nouns_translations.xml" relativeToChangelogFile="true"/>
     <include file="./scripts/10_insert_initial_nouns_translations.xml" relativeToChangelogFile="true"/>
     <include file="./scripts/12_insert_initial_verbs_translations.xml" relativeToChangelogFile="true"/>
+    <include file="./scripts/13_insert_weak_verbs_1st_conjugation.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
