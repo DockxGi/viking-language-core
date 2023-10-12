@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.10.xsd">
+
+    <changeSet id="15" author="Gino Dockx">
+
+        <!-- leggja, lay/put down -->
+        <insert tableName="word">
+            <column name="id" value="-21" />
+            <column name="latin_notation" value="leggja"/>
+            <column name="type" value="2"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+            <column name="strong" value="false"/>
+            <column name="conjugation" value="3"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-30"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="lay"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-21"/>
+            <column name="translation_id" value="-30"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-31"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="put down"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-21"/>
+            <column name="translation_id" value="-31"/>
+        </insert>
+
+        <!-- setja, set -->
+        <insert tableName="word">
+            <column name="id" value="-22" />
+            <column name="latin_notation" value="setja"/>
+            <column name="type" value="2"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+            <column name="strong" value="false"/>
+            <column name="conjugation" value="3"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-32"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="set"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-22"/>
+            <column name="translation_id" value="-32"/>
+        </insert>
+
+        <!-- skilja, part/separate -->
+        <insert tableName="word">
+            <column name="id" value="-23" />
+            <column name="latin_notation" value="skilja"/>
+            <column name="type" value="2"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+            <column name="strong" value="false"/>
+            <column name="conjugation" value="3"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-33"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="part"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-23"/>
+            <column name="translation_id" value="-33"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-34"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="separate"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-23"/>
+            <column name="translation_id" value="-34"/>
+        </insert>
+
+        <!-- vilja, want -->
+        <insert tableName="word">
+            <column name="id" value="-24" />
+            <column name="latin_notation" value="vilja"/>
+            <column name="type" value="2"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+            <column name="strong" value="false"/>
+            <column name="conjugation" value="3"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-35"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="want"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-24"/>
+            <column name="translation_id" value="-35"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

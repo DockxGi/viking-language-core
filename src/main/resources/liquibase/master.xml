@@ -19,5 +19,6 @@
     <include file="./scripts/13_insert_weak_verbs_1st_conjugation.xml" relativeToChangelogFile="true"/>
     <include file="./scripts/13_insert_weak_verbs_1st_conjugation.xml" relativeToChangelogFile="true"/>
     <include file="./scripts/14_insert_weak_verbs_2nd_conjugation.xml" relativeToChangelogFile="true"/>
+    <include file="./scripts/15_insert_weak_verbs_3rd_conjugation.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

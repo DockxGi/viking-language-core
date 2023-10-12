@@ -16,7 +16,7 @@ public abstract class RandomWordsPicker {
 
         for (int i = 0; i < amount; i++){
             int amountToPickFrom = words.size();
-            int indexToPick = nextInt(0, amountToPickFrom - 1);
+            int indexToPick = nextInt(0, amountToPickFrom);
 
             Word pickedWord = words.get(indexToPick);
             pickedWords.add(pickedWord);
