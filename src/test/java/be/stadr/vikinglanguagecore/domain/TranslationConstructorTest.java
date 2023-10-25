@@ -23,6 +23,13 @@ public class TranslationConstructorTest {
     }
 
     @Test
+    public void oneCharLanguageCode(){
+        IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> new Translation("e", "man"));
+
+        assertEquals(iae.getMessage(), "languageCode should be exactly 2 chars long");
+    }
+
+    @Test
     public void nullText(){
         IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> new Translation("en", null));
 

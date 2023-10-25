@@ -1,16 +1,17 @@
 package be.stadr.vikinglanguagecore.domain;
 
+import be.stadr.vikinglanguagecore.utils.StringValidator;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.util.Assert;
+import org.apache.commons.lang3.Validate;
 import org.springframework.util.CollectionUtils;
 
 import javax.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import static be.stadr.vikinglanguagecore.utils.StringValidator.length;
 import static javax.persistence.GenerationType.AUTO;
 import static org.springframework.util.Assert.notNull;
 
@@ -33,6 +34,7 @@ public class Translation {
 
     public Translation(String languageCode, String text) {
         notNull(languageCode, "languageCode should not be null");
+        length(languageCode, 2, "languageCode should be exactly 2 chars long");
         notNull(text, "text should not be null");
 
         this.languageCode = languageCode;
