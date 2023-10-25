@@ -30,9 +30,23 @@ public class TranslationConstructorTest {
     }
 
     @Test
+    public void threeCharLanguageCode(){
+        IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> new Translation("eng", "man"));
+
+        assertEquals(iae.getMessage(), "languageCode should be exactly 2 chars long");
+    }
+
+    @Test
     public void nullText(){
         IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> new Translation("en", null));
 
         assertEquals(iae.getMessage(), "text should not be null");
+    }
+
+    @Test
+    public void blankText(){
+        IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> new Translation("en", ""));
+
+        assertEquals(iae.getMessage(), "text should not be blank");
     }
 }

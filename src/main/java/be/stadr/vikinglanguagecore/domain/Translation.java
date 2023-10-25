@@ -13,6 +13,7 @@ import java.util.List;
 
 import static be.stadr.vikinglanguagecore.utils.StringValidator.length;
 import static javax.persistence.GenerationType.AUTO;
+import static org.apache.commons.lang3.Validate.notBlank;
 import static org.springframework.util.Assert.notNull;
 
 /**
@@ -36,6 +37,7 @@ public class Translation {
         notNull(languageCode, "languageCode should not be null");
         length(languageCode, 2, "languageCode should be exactly 2 chars long");
         notNull(text, "text should not be null");
+        notBlank(text, "text should not be blank");
 
         this.languageCode = languageCode;
         this.text = text;
