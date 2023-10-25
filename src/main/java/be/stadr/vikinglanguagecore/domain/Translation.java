@@ -3,6 +3,7 @@ package be.stadr.vikinglanguagecore.domain;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static javax.persistence.GenerationType.AUTO;
+import static org.springframework.util.Assert.notNull;
 
 /**
  * A single translation for an old norse word. The translation can be in any language
@@ -30,6 +32,9 @@ public class Translation {
     private String text;
 
     public Translation(String languageCode, String text) {
+        notNull(languageCode, "languageCode should not be null");
+        notNull(text, "text should not be null");
+
         this.languageCode = languageCode;
         this.text = text;
     }
