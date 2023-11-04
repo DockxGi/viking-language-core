@@ -14,7 +14,7 @@
                 <constraints nullable="false" notNullConstraintName="nn_word_type"/>
             </column>
             <column name="latin_notation" type="nvarchar2">
-                <constraints nullable="false" notNullConstraintName="nn_word_latin_notation"/>
+                <constraints nullable="false" notNullConstraintName="nn_word_latin_notation" unique="true" uniqueConstraintName="u_word_latin_notation"/>
             </column>
             <column name="most_frequent_in_sagas" type="bool">
                 <constraints nullable="false" notNullConstraintName="nn_word_most_frequent_in_sagas"/>
