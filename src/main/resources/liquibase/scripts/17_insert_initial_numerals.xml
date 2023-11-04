@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.10.xsd">
+
+    <!-- kona, woman, wife -->
+    <changeSet id="17" author="Gino Dockx">
+
+        <!-- 12 -->
+        <insert tableName="word">
+            <column name="id" value="-33" />
+            <column name="latin_notation" value="tólf"/>
+            <column name="type" value="4"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-49"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="twelve"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-33"/>
+            <column name="translation_id" value="-49"/>
+        </insert>
+
+        <!-- 1 -->
+        <insert tableName="word">
+            <column name="id" value="-34" />
+            <column name="latin_notation" value="einn"/>
+            <column name="type" value="4"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-50"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="one"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-34"/>
+            <column name="translation_id" value="-50"/>
+        </insert>
+
+        <!-- 2 -->
+        <insert tableName="word">
+            <column name="id" value="-35" />
+            <column name="latin_notation" value="tveir"/>
+            <column name="type" value="4"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-51"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="two"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-35"/>
+            <column name="translation_id" value="-51"/>
+        </insert>
+
+        <!-- 3 -->
+        <insert tableName="word">
+            <column name="id" value="-36" />
+            <column name="latin_notation" value="þrír"/>
+            <column name="type" value="4"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-52"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="three"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-36"/>
+            <column name="translation_id" value="-52"/>
+        </insert>
+
+        <!-- 4 -->
+        <insert tableName="word">
+            <column name="id" value="-37" />
+            <column name="latin_notation" value="fjórir"/>
+            <column name="type" value="4"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-53"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="four"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-37"/>
+            <column name="translation_id" value="-53"/>
+        </insert>
+
+        <!-- 5 -->
+        <insert tableName="word">
+            <column name="id" value="-38" />
+            <column name="latin_notation" value="fimm"/>
+            <column name="type" value="4"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-54"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="five"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-38"/>
+            <column name="translation_id" value="-54"/>
+        </insert>
+
+        <!-- 6 -->
+        <insert tableName="word">
+            <column name="id" value="-39" />
+            <column name="latin_notation" value="sex"/>
+            <column name="type" value="4"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-55"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="six"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-39"/>
+            <column name="translation_id" value="-55"/>
+        </insert>
+
+        <!-- 7 -->
+        <insert tableName="word">
+            <column name="id" value="-40" />
+            <column name="latin_notation" value="sjau"/>
+            <column name="type" value="4"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-56"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="seven"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-40"/>
+            <column name="translation_id" value="-56"/>
+        </insert>
+
+        <!-- 10 -->
+        <insert tableName="word">
+            <column name="id" value="-41" />
+            <column name="latin_notation" value="tíu"/>
+            <column name="type" value="4"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-57"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="ten"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-41"/>
+            <column name="translation_id" value="-57"/>
+        </insert>
+
+        <!-- 15 -->
+        <insert tableName="word">
+            <column name="id" value="-42" />
+            <column name="latin_notation" value="fimmtán"/>
+            <column name="type" value="4"/>
+            <column name="most_frequent_in_sagas" value="true"/>
+        </insert>
+        <insert tableName="translation">
+            <column name="id" value="-58"/>
+            <column name="language_code" value="en"/>
+            <column name="text" value="fifteen"/>
+        </insert>
+        <insert tableName="word_translation">
+            <column name="word_id" value="-42"/>
+            <column name="translation_id" value="-58"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
