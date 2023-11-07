@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.10.xsd">
+
+    <!-- kona, woman, wife -->
+    <changeSet id="18" author="Gino Dockx">
+        <createTable tableName="user_registration">
+            <column name="id" type="integer">
+                <constraints primaryKey="true" primaryKeyName="pk_user_id"/>
+            </column>
+            <column name="first_name" type="nvarchar2">
+                <constraints nullable="false" notNullConstraintName="nn_user_first_name"/>
+            </column>
+            <column name="last_name" type="nvarchar2">
+                <constraints nullable="false" notNullConstraintName="nn_user_last_name"/>
+            </column>
+            <column name="email" type="nvarchar2">
+                <constraints nullable="false" notNullConstraintName="nn_user_email"/>
+            </column>
+            <column name="password" type="nvarchar2">
+                <constraints nullable="false" notNullConstraintName="nn_user_password"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -22,5 +22,6 @@
     <include file="./scripts/15_insert_weak_verbs_3rd_conjugation.xml" relativeToChangelogFile="true"/>
     <include file="./scripts/16_insert_initial_words.xml" relativeToChangelogFile="true"/>
     <include file="./scripts/17_insert_initial_numerals.xml" relativeToChangelogFile="true"/>
+    <include file="scripts/18_create-user-registration-table.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
